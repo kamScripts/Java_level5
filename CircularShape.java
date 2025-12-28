@@ -9,5 +9,26 @@ package oop.javaedu;
  * @author kg00k
  */
 public class CircularShape {
+    private double r;
+    public CircularShape(double rIn) {
+        r = rIn;
+    }
+
+    public double getRadius() {
+        return r;
+    }
+
+    public void setRadius(double r) {
+        this.r = r;
+    }
+    public double diameter() {
+        return 2 * r;
+    }
+    public double area() {
+        return Math.PI * r * r;
+    }
+    public double circumference() {
+        return Math.PI * r * 2;
+    }
     
 }
