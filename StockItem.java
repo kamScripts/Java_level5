@@ -1,15 +1,17 @@
 package oop.javaedu;
 
 /**
- *
+ * Updates:
+ * salesTax, priceAfterTax
  * @author kg00k
  */
 public class StockItem {
+    
     private final String stockNumber;
     private final String name;
     private double price;
     private int totalStock;
-    
+    private static int salesTax=22;
     public StockItem(String numIn, String nameIn, double priceIn) {
         stockNumber = numIn;
         name = nameIn;
@@ -18,14 +20,17 @@ public class StockItem {
 
     public String readAllAttr() {
         String msg = String.format("""
-                                   Item name:   %s
-                                   Item number: %s
-                                   Price:       $%.2f
-                                   Quantity:    %d
+                                   Item name:       %s
+                                   Item number:     %s
+                                   Price:           $%.2f
+                                   Price after tax: $%.2f
+                                   Quantity:         %d
                                    """, this.getName(),
                                    this.getStockNumber(),
                                    this.getPrice(),
-                                   this.getTotalStock());
+                                   this.getPriceAfterTax(),
+                                   this.getTotalStock()
+        );
         return msg;
     }
     
@@ -39,6 +44,14 @@ public class StockItem {
     
     public void setPrice(double price) {
         this.price = price;
+    }   
+
+    public static void setSalesTax(int salesTax) {
+        StockItem.salesTax = salesTax;
+    }
+    
+    public static int getSalesTax() {
+        return salesTax;
     }
     
     public String getStockNumber() {
@@ -52,12 +65,11 @@ public class StockItem {
     public double getPrice() {
         return price;
     }
+    public double getPriceAfterTax() {
+        return  getPrice() * (1 + getSalesTax()/100.0);
+    }
 
     public int getTotalStock() {
         return totalStock;
     }
-
- 
-    
-    
 }

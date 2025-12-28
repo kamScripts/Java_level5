@@ -1,4 +1,7 @@
-
+/*
+* Updates:
+* -> SalesTax & getPriceAfterTax()
+*/
 package oop.javaedu;
 
 import java.util.Scanner;
@@ -25,13 +28,19 @@ public class StockItemTester {
         tempPrice = sr.nextDouble();
         
         StockItem s1 = new StockItem(tempNumber,tempName,tempPrice);
+        
         s1.increaseStock(5);
+        StockItem.setSalesTax(10);
+        System.out.println(StockItem.getSalesTax());
+        
         System.out.println(s1.readAllAttr());
         System.out.println(String.format(
                 "Total value of all %s items: $%.2f",
                 s1.getName(),
                 s1.totalStockValue())     
         );
+        
+        
         
     }
     
