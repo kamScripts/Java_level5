@@ -37,6 +37,6 @@ public class JavaEdu {
                                    s1.getMarkForEnglish(),
                                    s1.avgMark());
         System.out.println(msg);
-        System.out.println("avg: "+s1.avgMark());
+
     }
 }

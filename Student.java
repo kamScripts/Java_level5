@@ -14,7 +14,7 @@ public class Student {
     private int markForMath;
     private int markForEnglish;
     private int markForScience;
-    private static double fee;
+    private static double fee=9250.0;
     
     public Student (String numIn, String nameIn) {
         studentNumber=numIn;
