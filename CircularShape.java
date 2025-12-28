@@ -10,6 +10,7 @@ package oop.javaedu;
  */
 public class CircularShape {
     private double r;
+    
     public CircularShape(double rIn) {
         r = rIn;
     }
@@ -18,8 +19,8 @@ public class CircularShape {
         return r;
     }
 
-    public void setRadius(double r) {
-        this.r = r;
+    public void setRadius(double rIn) {
+        this.r = rIn;
     }
     public double diameter() {
         return 2 * r;

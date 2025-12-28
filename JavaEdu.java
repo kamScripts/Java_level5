@@ -20,5 +20,23 @@ public class JavaEdu {
         "Radius = " + c.getRadius() + " Area = "+c.area());
         System.out.println(
         "Radius = " + c.getRadius() + " Circumference = "+c.circumference());
+        
+        Student s1 = new Student("1", "Kam");
+        s1.enterMarks(90, 95, 91);
+        String msg = String.format("""
+                                   %s marks:
+                                     %7s: %6d
+                                     Science: %6d
+                                     English: %6d
+                                     Average: %8.1f
+                                   """,
+                                   s1.getName(),
+                                   "maths",
+                                   s1.getMarkForMath(),
+                                   s1.getMarkForScience(),
+                                   s1.getMarkForEnglish(),
+                                   s1.avgMark());
+        System.out.println(msg);
+        System.out.println("avg: "+s1.avgMark());
     }
 }
